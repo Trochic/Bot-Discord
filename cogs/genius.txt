@@ -1,0 +1,19 @@
+import discord
+from discord.ext import commands
+import lyricsgenius
+
+class Genius(commands.Cog):
+    def __init__(self,client):
+        self.client = client
+
+    @commands.command()
+    async def genius(self, ctx, artiste, musique):
+        genius = lyricsgenius.Genius("eXlfbwpTqVkkQl1zKBxOLzQ_PCyB_jLLrK3RpZwl4t8n6Y-FMI0cawe_NocfqfC2")
+        paroles = genius.search_song(artiste, musique).lyrics
+        geniusembed = discord.Embed(title="test", colour=0x3224ff)
+        geniusembed.add_field(name="test2", value=f'{paroles}')
+        await ctx.send(embed=geniusembed)
+
+
+def setup(client):
+    client.add_cog(Genius(client))

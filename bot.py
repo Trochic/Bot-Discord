@@ -55,5 +55,5 @@ async def prixcrypto():
 async def Ping(ctx):
     await ctx.send(f'Pong {round(client.latency * 1000)}ms')
 
-client.run('Nzc2MDg0MjMzNTEyNjgxNTAy.X6vuxA.55spiLYwB6MWSKIIjtTc03Ek_A8')
+client.run('Nzc2MDg0MjMzNTEyNjgxNTAy.X6vuxA.LKDI4V6MCpRETzuPnpujg7U2QpU')
 

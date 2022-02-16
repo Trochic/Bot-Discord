@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 import random
-from googletrans import Translator
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
@@ -23,7 +22,6 @@ intents = discord.Intents.default()
 intents.members = True
 intents.messages = True
 client = commands.Bot(command_prefix = '.', intents=intents)
-translt = Translator()
 
 @client.event
 async def on_ready():
@@ -55,5 +53,5 @@ async def prixcrypto():
 async def Ping(ctx):
     await ctx.send(f'Pong {round(client.latency * 1000)}ms')
 
-client.run('Nzc2MDg0MjMzNTEyNjgxNTAy.X6vuxA.LKDI4V6MCpRETzuPnpujg7U2QpU')
+client.run(os.environ.get('BOTTOKEN'))
 
